@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Models;
+using MvcMovie.Services;
 
 namespace MvcMovie
 {
@@ -39,6 +40,8 @@ namespace MvcMovie
             services.AddDbContext<MvcMovieContext>(options =>
                 options.UseSqlite("Data Source=MvcMovie.db"));
 
+            services.AddTransient<MathService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,8 +65,9 @@ namespace MvcMovie
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=ServiceTest}/{action=Index}/{id?}");
             });
+
         }
     }
 }

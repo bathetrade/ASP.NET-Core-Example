@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "Service Test";
+}
+@using MvcMovie.ViewModels;
+@model ServiceTestViewModel;
+
+<h2>Service Test</h2>
+<ul>
+    <li>Math service GUID: @(Model.MathService.Id)</li>
+    <li>
+        @if(Model.Operation == Operation.Add){
+            <text>Was add</text>
+        }
+        else if (Model.Operation == Operation.Div) {
+            <text>Was divide</text>
+        }
+        else {
+            <text>Unrecognized operation</text>
+        }
+    </li>
+</ul>
