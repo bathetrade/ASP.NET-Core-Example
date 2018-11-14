@@ -19,7 +19,7 @@ namespace MvcMovie.Controllers
                 MathService = math,
                 x = x,
                 y = y,
-                Operation = (Operation)Enum.Parse(typeof(Operation), operation)
+                Operation = (Operation)Enum.Parse(typeof(Operation), operation, true)
             };
             return View(model);
         }

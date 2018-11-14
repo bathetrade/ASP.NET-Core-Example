@@ -40,7 +40,7 @@ namespace MvcMovie
             services.AddDbContext<MvcMovieContext>(options =>
                 options.UseSqlite("Data Source=MvcMovie.db"));
 
-            services.AddTransient<MathService>();
+            services.AddSingleton<MathService>(new MathService());
 
         }
 

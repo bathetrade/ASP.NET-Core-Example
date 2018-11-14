@@ -9,10 +9,10 @@
     <li>Math service GUID: @(Model.MathService.Id)</li>
     <li>
         @if(Model.Operation == Operation.Add){
-            <text>Was add</text>
+            <text>@Model.x + @Model.y = @Model.MathService.Add(Model.x,Model.y)</text>
         }
         else if (Model.Operation == Operation.Div) {
-            <text>Was divide</text>
+            <text>@Model.x / @Model.y = @Model.MathService.Divide(Model.x,Model.y)</text>
         }
         else {
             <text>Unrecognized operation</text>
